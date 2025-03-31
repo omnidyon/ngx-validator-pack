@@ -1,7 +1,6 @@
-import { AfterViewInit, Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
-import { DATA_TYPE_TOKENS, KEYWORD_TOKENS_A, KEYWORD_TOKENS_B, KEYWORD_TOKENS_C, OPERATOR_TOKENS } from './tokens';
+import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
 import { Formats } from './formatter/formatter.service';
-import { Token, TokenData } from './token.interface';
+import { Token } from './token.interface';
 
 @Directive({
   selector: '[appCodeFormatter]',

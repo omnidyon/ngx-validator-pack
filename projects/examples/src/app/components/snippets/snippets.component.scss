@@ -13,7 +13,7 @@
   --function-token-color: #44b7ff;
   --separator-token-color: #676e70;
   --property-token-color: #ff8c5f;
-  --operator-token-color:  #f8c49e;
+  --operator-token-color: #f8c49e;
   --parameter-token-color: #f371a6;
   --var-token-color: #cfddd2;
   --comment-token-color: gray;
@@ -58,15 +58,14 @@
 
 .copy,
 .snippet-tab {
-  background: none;
   color: var(--snippet-header-text-color);
   cursor: pointer;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 2px 2px;
 }
 
 .copy-tab {
   &:hover {
-    border-radius: 0 5px 5px 5px;
+    border-radius: 0 5px 0px 2px;
   }
 
   &:active {
@@ -75,13 +74,14 @@
 }
 
 .copy {
-  height: calc(var(--header-font-size) + 1px);
-  width: calc(var(--header-font-size) + 1px);
+  height: calc(var(--header-font-size) - 1px);
+  width: calc(var(--header-font-size));
   fill: var(--snippet-header-text-color);
 }
 
 .snippet-tab:hover {
   background-color: lighten($color: #1a212b, $amount: 8%);
+  color: lighten($color: #61789e, $amount: 12%);
 }
 .snippets {
   font-size: var(--snippet-font-size);

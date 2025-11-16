@@ -6,7 +6,10 @@
  * found at https://www.isc.org/licenses/
  */
 
-import { checkFactory, regexpValidator } from "ngx-validator-pack";
+import { checkFactory } from "../helpers/check-factory";
+import { regexpValidator } from "../validators/reactive-forms/reactive-forms-validators";
+
+
 
 export const AddressChecks = () => checkFactory([
     {

@@ -1,5 +1,5 @@
 /**
  * Generated bundle index. Do not edit.
  */
-/// <amd-module name="@dynamize/ngx-validator-pack" />
+/// <amd-module name="@omnidyon/ngx-validator-pack" />
 export * from './public-api';

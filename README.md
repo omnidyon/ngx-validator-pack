@@ -1,3 +1,4 @@
+[![Live Demo](https://img.shields.io/badge/demo-online-brightgreen)](https://omnidyon.com/project-demo/ngx-validator-pack)
 [![npm version](https://img.shields.io/npm/v/@omnidyon/ngx-validator-pack.svg)](https://www.npmjs.com/package/@omnidyon/ngx-validator-pack)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Angular](https://img.shields.io/badge/angular-16%2B-red)
@@ -24,7 +25,7 @@
 ### Live Demo
 
 Explore live usage examples and code previews:  
-**[View Demo](https://omnidyon.com/tools/ngx-validator-pack)**
+**[View Demo](https://omnidyon.com/project-demo/ngx-validator-pack)**
 
 Found this useful? [Star the repo](https://github.com/omnidyon/ngx-validator-pack)  
 Want help integrating it into your app? [Book a consult](https://cal.com/omnidyon)

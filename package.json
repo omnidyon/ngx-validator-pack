@@ -36,7 +36,9 @@
     "Regex",
     "email",
     "phone",
-    "address"
+    "address",
+    "Typed Validators",
+    "Angular Validators"
   ],
   "author": "Slavko Mihajlovic - dynimorius",
   "bugs": {

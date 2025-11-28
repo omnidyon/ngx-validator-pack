@@ -1,5 +1,12 @@
 {
-  "cSpell.words": ["dynamize", "Mihajlovic", "primeng", "remainer", "Slavko"],
+  "cSpell.words": [
+    "dynamize",
+    "Mihajlovic",
+    "omnidyon",
+    "primeng",
+    "remainer",
+    "Slavko"
+  ],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

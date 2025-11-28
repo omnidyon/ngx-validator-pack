@@ -1,3 +1,9 @@
+[![npm version](https://img.shields.io/npm/v/@omnidyon/ngx-validator-pack.svg)](https://www.npmjs.com/package/@omnidyon/ngx-validator-pack)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![Angular](https://img.shields.io/badge/angular-16%2B-red)
+[![npm downloads](https://img.shields.io/npm/dm/@omnidyon/ngx-validator-pack.svg)](https://www.npmjs.com/package/@omnidyon/ngx-validator-pack)
+[![GitHub stars](https://img.shields.io/github/stars/omnidyon/ngx-validator-pack?style=social)](https://github.com/omnidyon/ngx-validator-pack)
+
 <h1 align="center">Ngx Validator Pack</h1>
 
 <a name="start"></a>

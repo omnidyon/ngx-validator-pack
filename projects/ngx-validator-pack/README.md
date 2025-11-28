@@ -46,7 +46,7 @@
 ## Installation
 
 ```bash
-npm install --save @dynamize/ngx-validator-pack
+npm install --save @omnidyon/ngx-validator-pack
 ```
 
 ## Reactive Forms Validators
@@ -62,7 +62,7 @@ npm install --save @dynamize/ngx-validator-pack
 regexpValidator Example:
 
 ```javascript
-import { regexpValidator } from '@dynamize/ngx-validator-pack';
+import { regexpValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -76,7 +76,7 @@ In this example we are checking if the input is a word regexp, if not we will ge
 regexpValidator Example ?:
 
 ```javascript
-import { regexpValidator } from '@dynamize/ngx-validator-pack';
+import { regexpValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -107,7 +107,7 @@ the comparison.
 earlierThenValidator Example:
 
 ```javascript
-import { earlierThenValidator } from '@dynamize/ngx-validator-pack';
+import { earlierThenValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -119,7 +119,7 @@ import { earlierThenValidator } from '@dynamize/ngx-validator-pack';
 laterThenValidator Example:
 
 ```javascript
-import { laterThenValidator } from '@dynamize/ngx-validator-pack';
+import { laterThenValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -131,7 +131,7 @@ import { laterThenValidator } from '@dynamize/ngx-validator-pack';
 compareToValidator Example:
 
 ```javascript
-import { compareToValidator } from '@dynamize/ngx-validator-pack';
+import { compareToValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -165,7 +165,7 @@ not have a value but a given control does.
 requiredWhenValidator Example:
 
 ```javascript
-import { requiredWhenValidator } from '@dynamize/ngx-validator-pack';
+import { requiredWhenValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -177,7 +177,7 @@ import { requiredWhenValidator } from '@dynamize/ngx-validator-pack';
 linkToValidator and linkedToValidator Example:
 
 ```javascript
-import { linkToValidator, linkedToValidator } from '@dynamize/ngx-validator-pack';
+import { linkToValidator, linkedToValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -205,7 +205,7 @@ We can use <marl>addressValidator</marl> to validate the most common USA address
 (example: 3344 W Alameda Avenue, Lakewood, CO 80222).
 
 ```javascript
-import { addressValidator } from '@dynamize/ngx-validator-pack';
+import { addressValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -222,7 +222,7 @@ import { addressValidator } from '@dynamize/ngx-validator-pack';
 in the given input.
 
 ```javascript
-import { alphabetOnlyValidator } from '@dynamize/ngx-validator-pack';
+import { alphabetOnlyValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -247,7 +247,7 @@ dd/MM/YYYY.
 <mark>dateYYYY_MM_DDValidator</mark>checks for following format YYYY-MM-dd.
 
 ```javascript
-import { dateDD_MM_YYYYValidator, dateYYYY_MM_DDValidator} from '@dynamize/ngx-validator-pack';
+import { dateDD_MM_YYYYValidator, dateYYYY_MM_DDValidator} from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -269,7 +269,7 @@ We can use <mark>emailValidator</mark> to validate a text input for an email for
 (example: local-part@domain.com)
 
 ```javascript
-import { emailValidator } from '@dynamize/ngx-validator-pack';
+import { emailValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -300,7 +300,7 @@ import {
   ipAddressValidator,
   iPv4Validator,
   iPv6Validator
-  } from '@dynamize/ngx-validator-pack';
+  } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -319,7 +319,7 @@ import {
 in the given input.
 
 ```javascript
-import { numericsOnlyValidator } from '@dynamize/ngx-validator-pack';
+import { numericsOnlyValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -339,7 +339,7 @@ Please check the example here: [additional parameters example](#additional-param
 <mark>noSpecialsValidator</mark> will return an error if any spacial charter are in the given input.
 
 ```javascript
-import { noSpecialsValidator } from '@dynamize/ngx-validator-pack';
+import { noSpecialsValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -360,7 +360,7 @@ Please check the example here: [additional parameters example](#additional-param
 (you can check a list of passport format examples here: <a href="https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PII/Content/PII/PII_Examples_Passport.htm">list of passport examples</a>)
 
 ```javascript
-import { passportValidator } from '@dynamize/ngx-validator-pack';
+import { passportValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -382,7 +382,7 @@ Please check the example here: [additional parameters example](#additional-param
 length of at least 8 characters).
 
 ```javascript
-import { passwordValidator } from '@dynamize/ngx-validator-pack';
+import { passwordValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -403,7 +403,7 @@ Please check the example here: [additional parameters example](#additional-param
 (000) 000-0000, (000)000 0000, (000)000-0000.
 
 ```javascript
-import { phoneNumberValidator } from '@dynamize/ngx-validator-pack';
+import { phoneNumberValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -425,7 +425,7 @@ Please check the example here: [additional parameters example](#additional-param
 <mark>spaceRestrictionValidator</mark> will return an error if a given input starts or ends with a space charter.
 
 ```javascript
-import { spaceValidator, spaceRestrictionValidator } from '@dynamize/ngx-validator-pack';
+import { spaceValidator, spaceRestrictionValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -446,7 +446,7 @@ Please check the example here: [additional parameters example](#additional-param
 <mark>ssnValidator</mark> will check for the following ssn formats: AAA-GGG-SSSS or AAAGGGSSSS.
 
 ```javascript
-import { ssnValidator } from '@dynamize/ngx-validator-pack';
+import { ssnValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -478,7 +478,7 @@ import {
   timeHH_MM_12Validator,
   timeHH_MM_24Validator,
   timeHH_MM_SS_24Validator
- } from '@dynamize/ngx-validator-pack';
+ } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -500,7 +500,7 @@ Please check the example here: [additional parameters example](#additional-param
 <mark>urlValidator</mark> checks the given input for a url format.
 
 ```javascript
-import { urlValidator } from '@dynamize/ngx-validator-pack';
+import { urlValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -521,7 +521,7 @@ Please check the example here: [additional parameters example](#additional-param
 (format examples: 00000 or 00000-0000)
 
 ```javascript
-import { zipCodeValidator } from '@dynamize/ngx-validator-pack';
+import { zipCodeValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -545,7 +545,7 @@ if the condition is met and the second parameter is the name of the control whic
 <mark>requiredEther</mark> assigns a required status to a given control if the control which is being checked and a given control do not have values.
 
 ```javascript
-import { requiredEther, requiredIf, requiredIfNot } from '@dynamize/ngx-validator-pack';
+import { requiredEther, requiredIf, requiredIfNot } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -584,7 +584,7 @@ In this example we are using regexpValidator and regexpNotValidator, but impleme
 identical for all other ngx validators.
 
 ```javascript
-import { regexpValidator, regexpNotValidator } from '@dynamize/ngx-validator-pack';
+import { regexpValidator, regexpNotValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -629,7 +629,7 @@ In this example we are using the addressValidator, but implementation is
 identical for all other ngx validators.
 
 ```javascript
-import { addressValidator } from '@dynamize/ngx-validator-pack';
+import { addressValidator } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({
@@ -651,7 +651,7 @@ slightly different again.
 The only take one optional parameter which is a custom error message.
 
 ```javascript
-import { requiredEther, requiredIf, requiredIfNot } from '@dynamize/ngx-validator-pack';
+import { requiredEther, requiredIf, requiredIfNot } from '@omnidyon/ngx-validator-pack';
 
   ngOnInit(): void {
     this.exampleForm = this.fb.group({

@@ -1,9 +1,7 @@
-<h1 align="center">Ngx Validator Pack</h1>
-
 <a name="start"></a>
 
 <p align="center">
-  <img src="../../imgs/D_dynamize-angular-icon.png" alt="dynamize-angular-logo" width="120px" height="120px"/>
+  <img src="../../imgs/ngx-validator-pack-full.svg" alt="dynamize-angular-logo" width="200px" height="200px"/>
   <br>
   <em>Ngx Validator Pack is a collection of validators designed 
     <br> to simplify usage and allow quick customization.</em>

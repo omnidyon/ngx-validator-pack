@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
-import { requiredEther, requiredIf, requiredIfNot } from "ngx-validator-pack";
+import { requiredEther, requiredIf, requiredIfNot } from "../../../../../ngx-validator-pack/src/public-api";
 import { ShowValidationDirective } from "../../../../../ngx-validator-pack/src/public-api";
 import { formGroupHTMLSnippet, formGroupTSSnippet } from "../../snippet-data";
 import { SnippetsComponent } from "../snippets/snippets.component";

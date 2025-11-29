@@ -30,7 +30,7 @@ import {
   TimeHH_MM_SS_24ValidatorDirective,
   UrlValidatorDirective,
   ZipCodeValidatorDirective,
-} from "ngx-validator-pack";
+} from "../../../../../ngx-validator-pack/src/public-api";
 import { SnippetsComponent } from "../snippets/snippets.component";
 
 @Component({

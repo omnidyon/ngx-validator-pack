@@ -32,7 +32,7 @@ import {
   PasswordChecks,
   wordCountValidator,
   ShowValidationDirective,
-} from "ngx-validator-pack";
+} from "../../../../../ngx-validator-pack/src/public-api";
 
 import {
   addressHTMLSnippet,

@@ -2,6 +2,20 @@
   <div class="snippet-example-pair">
     <div class="input-wrapper">
       <h3>Checks Validator Directive Example:</h3>
+      <label for="addressChecks">Username Validation: </label>
+      <input
+        type="text"
+        name="usernameChecks"
+        id="usernameChecks"
+        formControlName="usernameChecks"
+        [checks]="usernameChecks.checks"
+      />
+    </div>
+    <app-snippets></app-snippets>
+  </div>
+  <div class="snippet-example-pair">
+    <div class="input-wrapper">
+      <h3>Checks Validator Directive Example:</h3>
       <label for="passwordChecks">Password Validation: </label>
       <input
         type="text"
@@ -30,6 +44,34 @@
   <div class="snippet-example-pair">
     <div class="input-wrapper">
       <h3>Checks Validator Directive Example:</h3>
+      <label for="addressChecks">Email Validation: </label>
+      <input
+        type="text"
+        name="emailChecks"
+        id="emailChecks"
+        formControlName="emailChecks"
+        [checks]="emailChecks.checks"
+      />
+    </div>
+    <app-snippets></app-snippets>
+  </div>
+  <div class="snippet-example-pair">
+    <div class="input-wrapper">
+      <h3>Checks Validator Directive Example:</h3>
+      <label for="addressChecks">Phone Validation: </label>
+      <input
+        type="text"
+        name="phoneChecks"
+        id="phoneChecks"
+        formControlName="phoneChecks"
+        [checks]="phoneChecks.checks"
+      />
+    </div>
+    <app-snippets></app-snippets>
+  </div>
+  <div class="snippet-example-pair">
+    <div class="input-wrapper">
+      <h3>Checks Validator Directive Example:</h3>
       <label for="wordCountChecks">Word Count Validation: </label>
       <textarea
         rows="5"
@@ -39,6 +81,20 @@
         formControlName="wordCountChecks"
         [checks]="wordCountChecks.checks"
       ></textarea>
+    </div>
+    <app-snippets></app-snippets>
+  </div>
+  <div class="snippet-example-pair">
+    <div class="input-wrapper">
+      <h3>Checks Validator Directive Example:</h3>
+      <label for="addressChecks">Slug Validation: </label>
+      <input
+        type="text"
+        name="slugChecks"
+        id="slugChecks"
+        formControlName="slugChecks"
+        [checks]="slugChecks.checks"
+      />
     </div>
     <app-snippets></app-snippets>
   </div>

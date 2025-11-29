@@ -33,6 +33,7 @@
       - [URL](#url)
       - [Zip Code](#zip-code)
       - [Check Packs](#check-packs)
+        - [Creating Your Own Check Pack](#create-check-packs)
   - [Cross Field Validators](#cross-field-validators)
   - [Custom Messaging](#custom-messaging)
     - [Custom Messages for Forms Validators](#ngx-custom-messages)
@@ -530,7 +531,7 @@ import { zipCodeValidator } from '@omnidyon/ngx-validator-pack';
 ```
 
 ### Check Packs (Live Progressive Validators)
-<a name="check-packs"></a>
+<a name="check-pack"></a>
 
 Ngx Validator Pack also includes _multi-stage validation groups_, each providing
 a series of checks that activate progressively as the user types.
@@ -570,8 +571,45 @@ this.form = this.fb.group({
   [checks]="passwordChecks.checks"
 />
 ```
+
 Each pack runs multiple mini–validators and returns a live
 boolean matrix you can use to display a progressive checklist to the user.
+
+### Creating Your Own Check Pack
+<a name="create-check-packs"></a>
+
+Ngx Validator Pack exposes **checkFactory** so you can build custom multi-rule
+validators the same way core packs (Password, Slug, Email etc.) are built.
+
+This allows you to define multiple checks such as:
+
+- required patterns (`!!`)
+- forbidden patterns (`!`)
+- custom error messages
+- fully indexed UI-friendly validation output
+
+#### Example: Custom Bio Validation
+
+```typescript
+import { checkFactory, regexpValidator } from '@omnidyon/ngx-validator-pack';
+
+export const BioChecks = () =>
+  checkFactory([
+    { validator: regexpValidator, args: [/\b\w+\b/, '!!'], errorName: 'hasWords', errorMsg: 'Must contain words.' },
+    {
+      validator: regexpValidator,
+      args: [/(\b\w+\b.*){10,}/, '!!'],
+      errorName: 'enoughWords',
+      errorMsg: 'Minimum 10 words required.',
+    },
+    {
+      validator: regexpValidator,
+      args: [/(https?|www\.)/, '!'],
+      errorName: 'noLinks',
+      errorMsg: 'Links are not allowed.',
+    },
+  ]);
+```
 
 ## Cross Field Validators
 

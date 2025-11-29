@@ -21,3 +21,6 @@ export * from './lib/helpers/check-factory';
 export * from './lib/checks/password-checks';
 export * from './lib/checks/word-count-checks';
 export * from './lib/checks/address-checks';
+export * from './lib/checks/email-checks';
+export * from './lib/checks/slugs-checks';
+export * from './lib/checks/username-checks';

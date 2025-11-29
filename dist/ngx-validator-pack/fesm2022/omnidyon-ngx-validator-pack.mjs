@@ -3478,28 +3478,164 @@ const AddressChecks = () => checkFactory([
     },
     {
         validator: regexpValidator,
-        args: [/(\d{1,}) [a-zA-Z0-9\s]+(\,)/, '!!'],
+        args: [/(\d{1,})\s+[a-zA-Z0-9\s]+,?/, '!!'],
         errorName: 'streetName',
         errorMsg: 'Street name.',
     },
     {
         validator: regexpValidator,
-        args: [/(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)/, '!!'],
+        args: [/(\d{1,})\s+[a-zA-Z0-9\s]+,?\s+[a-zA-Z\s]+,?/, '!!'],
         errorName: 'city',
         errorMsg: 'City.',
     },
     {
         validator: regexpValidator,
-        args: [/(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2}/, '!!'],
+        args: [/(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z\s]+(\,)? [A-Z]{2}/, '!!'],
         errorName: 'state',
         errorMsg: 'State.',
     },
     {
         validator: regexpValidator,
-        args: [/(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}/, '!!'],
+        args: [/(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z\s]+(\,)? [A-Z]{2} [0-9]{5,6}/, '!!'],
         errorName: 'zip',
         errorMsg: 'ZipCode.',
-    }
+    },
+]);
+
+/**
+ * @license
+ * Copyright Slavko Mihajlovic All Rights Reserved.
+ *
+ * Use of this source code is governed by an ISC-style license that can be
+ * found at https://www.isc.org/licenses/
+ */
+const EmailChecks = () => checkFactory([
+    {
+        validator: regexpValidator,
+        args: [/@/, '!!'],
+        errorName: 'hasAt',
+        errorMsg: 'Email must contain an "@" symbol.',
+    },
+    {
+        validator: regexpValidator,
+        args: [/^[^@\s]+@/, '!!'],
+        errorName: 'localPart',
+        errorMsg: 'Email must have text before "@".',
+    },
+    {
+        validator: regexpValidator,
+        args: [/@[^@\s]+$/, '!!'],
+        errorName: 'domainPart',
+        errorMsg: 'Email must have a domain after "@".',
+    },
+    {
+        validator: regexpValidator,
+        args: [/@.+\./, '!!'],
+        errorName: 'hasDot',
+        errorMsg: 'Email domain must contain a dot (".").',
+    },
+    {
+        validator: regexpValidator,
+        args: [/\.[A-Za-z]{2,}$/, '!!'],
+        errorName: 'tldLength',
+        errorMsg: 'Email TLD must be at least 2 characters.',
+    },
+    {
+        validator: regexpValidator,
+        args: [/^\S*$/, '!!'],
+        errorName: 'noSpaces',
+        errorMsg: 'Email must not contain spaces.',
+    },
+]);
+
+/**
+ * @license
+ * Copyright Slavko Mihajlovic All Rights Reserved.
+ *
+ * Use of this source code is governed by an ISC-style license that can be
+ * found at https://www.isc.org/licenses/
+ */
+const SlugChecks = () => checkFactory([
+    // ✔ only lowercase letters, numbers and dashes
+    {
+        validator: regexpValidator,
+        args: [/^[a-z0-9-]+$/, '!!'],
+        errorName: 'allowedChars',
+        errorMsg: 'Only lowercase letters, numbers and dashes are allowed.',
+    },
+    // ✔ min/max length
+    {
+        validator: regexpValidator,
+        args: [/^.{3,50}$/, '!!'],
+        errorName: 'length',
+        errorMsg: 'Slug must be between 3 and 50 characters.',
+    },
+    // ✖ must NOT start with a dash
+    {
+        validator: regexpValidator,
+        args: [/^-/, '!'],
+        errorName: 'noLeadingDash',
+        errorMsg: 'Slug cannot start with a dash.',
+    },
+    // ✖ must NOT end with a dash
+    {
+        validator: regexpValidator,
+        args: [/-$/, '!'],
+        errorName: 'noTrailingDash',
+        errorMsg: 'Slug cannot end with a dash.',
+    },
+    // ✖ must NOT contain consecutive dashes
+    {
+        validator: regexpValidator,
+        args: [/--/, '!'],
+        errorName: 'noDoubleDash',
+        errorMsg: 'Slug cannot contain repeated dashes.',
+    },
+]);
+
+/**
+ * @license
+ * Copyright Slavko Mihajlovic All Rights Reserved.
+ *
+ * Use of this source code is governed by an ISC-style license that can be
+ * found at https://www.isc.org/licenses/
+ */
+const UsernameChecks = () => checkFactory([
+    // must contain at least one letter
+    {
+        validator: regexpValidator,
+        args: [/[A-Za-z]/, '!!'],
+        errorName: 'hasLetter',
+        errorMsg: 'Username must contain at least one letter.',
+    },
+    // only letters, numbers and underscore
+    {
+        validator: regexpValidator,
+        args: [/^[A-Za-z0-9_]+$/, '!!'],
+        errorName: 'allowedChars',
+        errorMsg: 'Username may only contain letters, numbers, and underscores.',
+    },
+    // length between 3 and 20
+    {
+        validator: regexpValidator,
+        args: [/^.{3,20}$/, '!!'],
+        errorName: 'length',
+        errorMsg: 'Username must be between 3 and 20 characters.',
+    },
+    // cannot start or end with underscore
+    {
+        validator: regexpValidator,
+        args: [/^(?!_)(?!.*_$).*$/, '!!'],
+        errorName: 'noEdgeUnderscore',
+        errorMsg: 'Username cannot start or end with an underscore.',
+    },
+    // no double underscore
+    {
+        validator: regexpValidator,
+        args: [/^(?!.*__).*$/, '!!'],
+        errorName: 'noDoubleUnderscore',
+        errorMsg: 'Username cannot contain consecutive underscores.',
+    },
 ]);
 
 /**
@@ -3516,5 +3652,5 @@ const AddressChecks = () => checkFactory([
  * Generated bundle index. Do not edit.
  */
 
-export { AddressChecks, AddressValidatorDirective, AlphabetOnlyValidatorDirective, ChecksDirective, CompareToValidatorDirective, DateDD_MM_YYYYValidatorDirective, DateYYYY_MM_DDValidatorDirective, EarlierThenValidatorDirective, EmailValidatorDirective, IPAddressValidatorDirective, IPv4ValidatorDirective, IPv6ValidatorDirective, LaterThenValidatorDirective, LengthValidatorDirective, LinkToValidatorDirective, LinkedToValidatorDirective, NoSpecialsValidatorDirective, NumericsOnlyValidatorDirective, PassportValidatorDirective, PasswordChecks, PasswordValidatorDirective, PhoneNumberValidatorDirective, RangeValidatorDirective, RegExpValidatorDirective, RequiredEtherValidatorDirective, RequiredIfNotValidatorDirective, RequiredIfValidatorDirective, RequiredWhenValidatorDirective, SSNValidatorDirective, ShowValidationDirective, SpaceRestrictionValidatorDirective, SpaceValidatorDirective, TimeHH_MM_12ValidatorDirective, TimeHH_MM_24ValidatorDirective, TimeHH_MM_SS_24ValidatorDirective, UrlValidatorDirective, WordCountChecks, WordCountRangeValidatorDirective, WordCountValidatorDirective, ZipCodeValidatorDirective, addressValidator, alphabetOnlyValidator, checkFactory, compareToValidator, dateDD_MM_YYYYValidator, dateYYYY_MM_DDValidator, earlierThenValidator, emailValidator, iPv4Validator, iPv6Validator, ipAddressValidator, laterThenValidator, lengthValidator, linkToValidator, linkedToValidator, noSpecialsValidator, numericsOnlyValidator, passportValidator, passwordValidator, phoneNumberValidator, rangeValidator, regexpValidator, requiredEther, requiredIf, requiredIfNot, requiredWhenValidator, spaceRestrictionValidator, spaceValidator, ssnValidator, timeHH_MM_12Validator, timeHH_MM_24Validator, timeHH_MM_SS_24Validator, urlValidator, wordCountRangeValidator, wordCountValidator, zipCodeValidator };
+export { AddressChecks, AddressValidatorDirective, AlphabetOnlyValidatorDirective, ChecksDirective, CompareToValidatorDirective, DateDD_MM_YYYYValidatorDirective, DateYYYY_MM_DDValidatorDirective, EarlierThenValidatorDirective, EmailChecks, EmailValidatorDirective, IPAddressValidatorDirective, IPv4ValidatorDirective, IPv6ValidatorDirective, LaterThenValidatorDirective, LengthValidatorDirective, LinkToValidatorDirective, LinkedToValidatorDirective, NoSpecialsValidatorDirective, NumericsOnlyValidatorDirective, PassportValidatorDirective, PasswordChecks, PasswordValidatorDirective, PhoneNumberValidatorDirective, RangeValidatorDirective, RegExpValidatorDirective, RequiredEtherValidatorDirective, RequiredIfNotValidatorDirective, RequiredIfValidatorDirective, RequiredWhenValidatorDirective, SSNValidatorDirective, ShowValidationDirective, SlugChecks, SpaceRestrictionValidatorDirective, SpaceValidatorDirective, TimeHH_MM_12ValidatorDirective, TimeHH_MM_24ValidatorDirective, TimeHH_MM_SS_24ValidatorDirective, UrlValidatorDirective, UsernameChecks, WordCountChecks, WordCountRangeValidatorDirective, WordCountValidatorDirective, ZipCodeValidatorDirective, addressValidator, alphabetOnlyValidator, checkFactory, compareToValidator, dateDD_MM_YYYYValidator, dateYYYY_MM_DDValidator, earlierThenValidator, emailValidator, iPv4Validator, iPv6Validator, ipAddressValidator, laterThenValidator, lengthValidator, linkToValidator, linkedToValidator, noSpecialsValidator, numericsOnlyValidator, passportValidator, passwordValidator, phoneNumberValidator, rangeValidator, regexpValidator, requiredEther, requiredIf, requiredIfNot, requiredWhenValidator, spaceRestrictionValidator, spaceValidator, ssnValidator, timeHH_MM_12Validator, timeHH_MM_24Validator, timeHH_MM_SS_24Validator, urlValidator, wordCountRangeValidator, wordCountValidator, zipCodeValidator };
 //# sourceMappingURL=omnidyon-ngx-validator-pack.mjs.map

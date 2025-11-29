@@ -34,6 +34,7 @@
       - [Time](#time)
       - [URL](#url)
       - [Zip Code](#zip-code)
+      - [Check Packs](#check-packs)
   - [Cross Field Validators](#cross-field-validators)
   - [Custom Messaging](#custom-messaging)
     - [Custom Messages for Forms Validators](#ngx-custom-messages)
@@ -530,6 +531,50 @@ import { zipCodeValidator } from '@omnidyon/ngx-validator-pack';
   }
 ```
 
+### Check Packs (Live Progressive Validators)
+<a name="check-packs"></a>
+
+Ngx Validator Pack also includes _multi-stage validation groups_, each providing
+a series of checks that activate progressively as the user types.
+
+These are ideal for UI-driven validation feedback such as live checklists below inputs.
+
+Available Check Packs:
+
+| Check Pack          | Validates                               | Notes                                         |
+| ------------------- | --------------------------------------- | --------------------------------------------- |
+| **PasswordChecks**  | Strength, symbols, numbers, cases       | Real–time complexity feedback                 |
+| **AddressChecks**   | Street → City → State → ZIP             | Validates single-line US-style address format |
+| **WordRangeChecks** | Min/max word count                      | Useful for bios/descriptions                  |
+| **UsernameChecks**  | Letters, numbers, underscore rules      | No edge or double underscores                 |
+| **EmailChecks**     | Basic RFC-safe email sanity             | No `< >`, spaces, mandatory `@ + TLD`         |
+| **PhoneChecks**     | International-friendly digit validation | Allowed chars + digit count 8–15              |
+| **SlugChecks**      | URL-safe slug generation                | Lowercase, no double or edge dashes           |
+
+#### Usage Example:
+
+```typescript
+import { PasswordChecks } from '@omnidyon/ngx-validator-pack';
+
+passwordChecks = PasswordChecks();
+
+this.form = this.fb.group({
+  passwordChecks: [null, this.passwordChecks.validators],
+});
+```
+
+```html
+<input
+  type="text"
+  name="passwordChecks"
+  id="passwordChecks"
+  formControlName="passwordChecks"
+  [checks]="passwordChecks.checks"
+/>
+```
+Each pack runs multiple mini–validators and returns a live
+boolean matrix you can use to display a progressive checklist to the user.
+
 ## Cross Field Validators
 
 <a name="cross-field-validators"></a>
@@ -662,8 +707,8 @@ import { requiredEther, requiredIf, requiredIfNot } from '@omnidyon/ngx-validato
     }, {
         validators: [
           requiredIf(
-            "if", 
-            "compare", 
+            "if",
+            "compare",
             "Compere input has a value"
             ),
           requiredIfNot(

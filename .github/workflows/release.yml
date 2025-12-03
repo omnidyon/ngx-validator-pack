@@ -17,7 +17,7 @@ jobs:
     # This must match the environment name you configured on npm:
     # "NPM_TOKEN"
     environment:
-      name: NPM_TOKEN
+      name: NPM_ENV
 
     steps:
       - name: Checkout repository

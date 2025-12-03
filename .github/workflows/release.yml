@@ -1,0 +1,41 @@
+name: Release & Publish
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'   # e.g. v0.1.0, v1.0.3
+
+permissions:
+  id-token: write   # required for npm OIDC / provenance
+  contents: read    # needed to read the repo
+
+jobs:
+  build-and-publish:
+    name: Build library and publish to npm
+    runs-on: ubuntu-latest
+
+    # This must match the environment name you configured on npm:
+    # "NPM_TOKEN"
+    environment:
+      name: NPM_TOKEN
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # If your Angular workspace uses something else, adjust this
+      - name: Build Angular library
+        run: npm run build ngx-validator-pack
+
+      - name: Publish package to npm (OIDC, no token)
+        working-directory: dist/ngx-validator-pack
+        run: npm publish --access public --provenance

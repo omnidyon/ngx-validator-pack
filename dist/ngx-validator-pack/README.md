@@ -1,7 +1,7 @@
 <a name="start"></a>
 
 <p align="center">
-  <img src="./imgs/ngx-validator-pack-full.svg" alt="ngx-validator-pack-mascot" width="200px" height="200px"/>
+  <img src="../../imgs/ngx-validator-pack-full.svg" alt="ngx-validator-pack-mascot" width="200px" height="200px"/>
   <br>
   <em>Ngx Validator Pack is a collection of validators designed 
     <br> to simplify usage and allow quick customization.</em>

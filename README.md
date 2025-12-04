@@ -6,7 +6,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/omnidyon/ngx-validator-pack?style=social)](https://github.com/omnidyon/ngx-validator-pack)
 
 <p align="center">
-  <img src="./projects/ngx-validator-pack/imgs/ngx-validator-pack-full.svg" alt="" width="400px" height="400px"/>
+  <img src="./imgs/ngx-validator-pack-full.svg" alt="" width="400px" height="400px"/>
   <br>
   <em>Ngx Validator Pack is a collection of validators designed 
     <br> to simplify usage and allow quick customization.</em>
